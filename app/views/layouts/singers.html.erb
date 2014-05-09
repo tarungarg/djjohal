@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Djjohal</title>
+  <%= javascript_include_tag 'jquery1.1' %>
+  <%= javascript_include_tag 'application' %>
+  <%#= javascript_include_tag 'jquery' %>
+  <%#= javascript_include_tag 'jquery-ui' %>
+  <%= javascript_include_tag 'prototype' %>
+  <%= javascript_include_tag 'jrails' %>
+  <%= javascript_include_tag 'effects' %>
+  <%= javascript_include_tag 'dragdrop' %>
+  <%= javascript_include_tag 'controls' %>
+  <%= javascript_include_tag 'audio.min' %>
+  <%= javascript_include_tag 'translate-it' %>
+</head>
+<body>
+<div id="translateFlags"></div>
+<div id="user_nav">
+  <% if current_user %>
+    Logged in as <%= current_user.email %>.
+    <%= link_to "Log out", session_path(current_user.id), :method => 'delete' %>
+  <% else %>
+    <%= link_to "Log In",  new_session_path%>
+  <% end %>
+</div>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield %>
+<script type="text/javascript">
+  TranslateIt.init();
+  jQuery.noConflict();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<div id="singer-list">
+  <h1>Listing singers</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+
+  <% @singers.each do |singer| %>
+    <tr id="singer">
+      <td><%= link_to singer.name, singer_songs_path(singer.id) %></td>
+      <%if current_user%>
+        <td><%= link_to 'Add Songs', new_singer_song_path(singer.id) %></td>
+        <td><%= link_to 'Destroy', singer, :confirm => 'Are you sure?', :method => :delete %></td>
+      <%end%>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+  <%if current_user%>
+    <input type="text" name="singer-name" id="singer-name" value=""/><input type="button" id="add-singer" value="Add Singer"/>
+    <span id="error_msg"></span>
+  <%end%>
+</div>

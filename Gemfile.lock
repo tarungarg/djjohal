@@ -1,0 +1,48 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (2.3.5)
+      actionpack (= 2.3.5)
+    actionpack (2.3.5)
+      activesupport (= 2.3.5)
+      rack (~> 1.0.0)
+    activerecord (2.3.5)
+      activesupport (= 2.3.5)
+    activeresource (2.3.5)
+      activesupport (= 2.3.5)
+    activesupport (2.3.5)
+    bcrypt-ruby (3.1.2)
+    columnize (0.3.6)
+    json (1.8.1)
+    linecache (0.46)
+      rbx-require-relative (> 0.0.4)
+    mysql (2.9.1)
+    paperclip (2.3.1.1)
+    rack (1.0.1)
+    rails (2.3.5)
+      actionmailer (= 2.3.5)
+      actionpack (= 2.3.5)
+      activerecord (= 2.3.5)
+      activeresource (= 2.3.5)
+      activesupport (= 2.3.5)
+      rake (>= 0.8.3)
+    rake (10.1.1)
+    rbx-require-relative (0.0.9)
+    rdoc (4.1.1)
+      json (~> 1.4)
+    ruby-debug (0.10.4)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.4.0)
+    ruby-debug-base (0.10.4)
+      linecache (>= 0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bcrypt-ruby
+  mysql
+  paperclip (~> 2.3.1.1)
+  rails (= 2.3.5)
+  rdoc
+  ruby-debug

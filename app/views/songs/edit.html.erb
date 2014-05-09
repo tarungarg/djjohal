@@ -1,0 +1,20 @@
+<h1>Editing song</h1>
+
+<% form_for(@song) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :singer_id %><br />
+    <%= f.text_field :singer_id %>
+  </p>
+  <p>
+    <%= f.label :audio %><br />
+    <%= f.text_field :audio %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @song %> |
+<%= link_to 'Back', songs_path %>

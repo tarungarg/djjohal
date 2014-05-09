@@ -1,0 +1,26 @@
+<%#= stylesheet_link_tag 'index'%>
+<h1><%= @singer.name %></h1>
+<h1>Listing songs</h1>
+
+<table>
+  <tr>
+    <th>Audio</th>
+  </tr>
+
+<% @songs.each do |song| %>
+  <tr>
+    <td><audio src="<%= song.audio.url%>"><%= song.audio.path%></td>
+    <td><a href="/songs/audio_download/<%= song.id%>", style="text-decoration:none"><%= song.audio_file_name %></a>
+  </td>
+<td><%= link_to 'Destroy', singer_song_path(song.singer_id, song.id), :confirm => 'Are you sure?', :method => :delete if current_user%></td></tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add New song', new_singer_song_path(@singer.id) if current_user%>
+<script type="text/javascript">
+	audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>

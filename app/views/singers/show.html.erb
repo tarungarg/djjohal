@@ -1,0 +1,7 @@
+<p>
+  <b>Name:</b>
+  <%=h @singer.name %>
+</p>
+<%= link_to 'Add Songs', new_singer_song_path(@singer)%><br /><br /><br />
+<%= link_to 'Edit', edit_singer_path(@singer) %> |
+<%= link_to 'Back', singers_path %>

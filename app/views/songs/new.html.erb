@@ -1,0 +1,12 @@
+<h1>New song</h1>
+
+<% form_for(:song, @song, :url => singer_songs_path(@singer.id), :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :audio %><br />
+    <%= f.file_field :audio %>
+  </p>
+  <p>
+    <%= f.submit 'Add' %>
+  </p>
+<%end%>
